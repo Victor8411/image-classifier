@@ -8,7 +8,7 @@ dm-tree==0.1.9
 docstring_parser==0.16
 einops==0.8.1
 etils==1.12.2
-flatbuffers==20181003210633
+flatbuffers==24.3.25
 fsspec==2025.5.1
 gast==0.6.0
 google-pasta==0.2.0
