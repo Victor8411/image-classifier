@@ -3,7 +3,7 @@ import tensorflow as tf
 import os
 
 # Chemins des dossiers
-BASE_DIR = os.path.dirname(__file__)
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 TRAIN_DIR = os.path.join(DATA_DIR, "train")
 VAL_DIR = os.path.join(DATA_DIR, "val")
