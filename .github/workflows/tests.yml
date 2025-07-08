@@ -1,9 +1,9 @@
-name: Test Image Classifier
+name: Run tests
 
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
       - master
@@ -13,24 +13,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
+    - uses: actions/checkout@v3
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
-        python-version: "3.11"
+        python-version: '3.11'
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        pip install pytest
 
-    - name: Download training data
-      run: |
-        python src/download_data.py
-
-    - name: Run tests with pytest
+    - name: Run tests
       run: |
         pytest tests/
 
