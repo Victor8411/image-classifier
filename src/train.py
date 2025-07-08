@@ -13,7 +13,14 @@ MODEL_PATH = os.path.join(os.path.dirname(__file__), '..', 'models', 'model.h5')
 IMG_SIZE = (64, 64)
 BATCH_SIZE = 32
 
-train_gen = ImageDataGenerator(rescale=1./255)
+train_gen = ImageDataGenerator(
+    rescale=1./255,
+    rotation_range=20,
+    width_shift_range=0.1,
+    height_shift_range=0.1,
+    horizontal_flip=True
+)
+
 val_gen = ImageDataGenerator(rescale=1./255)
 
 train_data = train_gen.flow_from_directory(
