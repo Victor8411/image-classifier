@@ -2,3 +2,5 @@
 __pycache__/
 models/
 .DS_Store
+src/download_data.py 
+requirements.txt
